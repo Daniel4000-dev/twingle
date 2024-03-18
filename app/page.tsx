@@ -4,13 +4,8 @@ import Complaints from '@/components/Complaints.tsx';
 import Customers from '@/components/Customers.tsx';
 import Header from '@/components/Header.tsx'
 import TopCards from '@/components/TopCards.tsx';
-import { useRouter } from 'next/router.js';
-export default function Home() {
-  // const router = useRouter();
 
-  // if (router.pathname === '/customers') {
-  //   return <Customers />
-  // }
+export default function Home() {
   return (
     <div className="bg-gray-100 h-screen w-full">
       <Header />

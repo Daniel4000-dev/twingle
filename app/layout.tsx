@@ -1,11 +1,11 @@
 "use client"
 import Sidebar from "@/components/Sidebar.tsx";
-import { Outfit } from "next/font/google";
+import { Inter } from "next/font/google";
 import { metadata } from './metadata.ts';
 import { usePathname } from "next/navigation.js";
 import "./globals.css";
 
-const inter = Outfit({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({
   children,

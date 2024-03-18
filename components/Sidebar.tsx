@@ -1,8 +1,18 @@
+"use client"
 import React from 'react';
 import Image from 'next/image';
-import Link from 'next/link.ts';
+import Link from 'next/link';
 import { RxDashboard, RxPerson } from 'react-icons/rx';
 import { PiUsersThree } from 'react-icons/pi';
+import Customers from './Customers.tsx';
+import AdminManagement from './AdminManagement.tsx';
+import CustomerSupport from './CustomerSupport.tsx';
+import ReportsAndComplaints from './ReportsAndComplaints.tsx';
+import Subscriptions from './Subscriptions.tsx';
+import Settings from './Settings.tsx';
+import Advertisement from './Advertisement.tsx';
+import { GoPerson } from 'react-icons/go';
+// import { useRouter } from 'next/router.js';
 
 interface SidebarProps {
     children: React.ReactNode;
@@ -10,6 +20,29 @@ interface SidebarProps {
 }
 
 const Sidebar: React.FC<SidebarProps> = ({ children, currentRoute }) => {
+    // if (currentRoute === '/adminmanagement') {
+    //     return <AdminManagement />
+    //   }
+    // if (currentRoute === '/customers') {
+    //     return <Customers />
+    //   }
+    // if (currentRoute === '/customersupport') {
+    //     return <CustomerSupport />
+    //   }
+    // if (currentRoute === '/reportsandcomplaints') {
+    //     return <ReportsAndComplaints />
+    //   }
+    // if (currentRoute === '/subscriptions') {
+    //     return <Subscriptions />
+    //   }
+    // if (currentRoute === '/settings') {
+    //     return <Settings />
+    //   }
+    // if (currentRoute === '/advertisement') {
+    //     return <Advertisement />
+    //   }
+    // const router = useRouter();
+
   return (
     <nav className='flex'>
         <div className='fixed w-[18vw] h-screen p-5 pt-8 text-white bg-black border-r-[1px] flex flex-col'>
@@ -18,49 +51,49 @@ const Sidebar: React.FC<SidebarProps> = ({ children, currentRoute }) => {
                 <h2 className="text-sm font-thin text-gray-300">Tier 1</h2>
             </div>
             <div className='flex gap-4 flex-col mt-5'>
-               <Link to='/' className ={currentRoute === '/' ? 'active' : 'text-gray-400 p-3'}>
+               <Link href='/' className ={currentRoute === '/' ? 'active' : 'text-gray-400 p-3'}>
                 <div className='flex gap-2 '>
                     <RxDashboard size={20} />
                     <h2 className='text-sm'>Summary</h2>
                 </div>
                </Link>
-               <Link to='/adminmanagement' className ={currentRoute === '/adminmanagement' ? 'active' : 'text-gray-400 p-3'}>
+               <Link href='/adminmanagement' className ={currentRoute === '/adminmanagement' ? 'active' : 'text-gray-400 p-3'}>
                 <div className='flex gap-2 '>
-                    <PiUsersThree size={20} />
-                    <h2 className='text-sm'>Admin Management</h2>
+                    <GoPerson size={20} />
+                    <h2 onClick={() => router.push('/')} className='text-sm'>Admin Management</h2>
                 </div>
                </Link>
-               <Link to='/customers' className ={currentRoute === '/customers' ? 'active' : 'text-gray-400 p-3'}>
+               <Link href='/customers' className ={currentRoute === '/customers' ? 'active' : 'text-gray-400 p-3'}>
                 <div className='flex gap-2 '>
                     <PiUsersThree size={20} />
                     <h2 className='text-sm'>Customers</h2>
                 </div>
                </Link>
-               <Link to='/customersupport' className ={currentRoute === '/customersupport' ? 'active' : 'text-gray-400 p-3'}>
+               <Link href='/customersupport' className ={currentRoute === '/customersupport' ? 'active' : 'text-gray-400 p-3'}>
                 <div className='flex gap-2 '>
                     <RxDashboard size={20} />
                     <h2 className='text-sm'>Customer Support</h2>
                 </div>
                </Link>
-               <Link to='/reportsandcomplaints' className ={currentRoute === '/reportsandcomplaints' ? 'active' : 'text-gray-400 p-3'}>
+               <Link href='/reportsandcomplaints' className ={currentRoute === '/reportsandcomplaints' ? 'active' : 'text-gray-400 p-3'}>
                 <div className='flex gap-2 '>
                     <RxDashboard size={20} />
                     <h2 className='text-sm'>Reports and complaints</h2>
                 </div>
                </Link>
-               <Link to='/subscriptions' className ={currentRoute === '/subscriptions' ? 'active' : 'text-gray-400 p-3'}>
+               <Link href='/subscriptions' className ={currentRoute === '/subscriptions' ? 'active' : 'text-gray-400 p-3'}>
                 <div className='flex gap-2 '>
                     <RxDashboard size={20} />
                     <h2 className='text-sm'>Subscriptions</h2>
                 </div>
                </Link>
-               <Link to='/settings' className ={currentRoute === '/settings' ? 'active' : 'text-gray-400 p-3'}>
+               <Link href='/settings' className ={currentRoute === '/settings' ? 'active' : 'text-gray-400 p-3'}>
                 <div className='flex gap-2 '>
                     <RxDashboard size={20} />
                     <h2 className='text-sm'>Settings</h2>
                 </div>
                </Link>
-               <Link to='/advertisement' className ={currentRoute === '/advertisement' ? 'active' : 'text-gray-400 p-3'}>
+               <Link href='/advertisement' className ={currentRoute === '/advertisement' ? 'active' : 'text-gray-400 p-3'}>
                 <div className='flex gap-2 '>
                     <RxDashboard size={20} />
                     <h2 className='text-sm'>Advertisement</h2>
