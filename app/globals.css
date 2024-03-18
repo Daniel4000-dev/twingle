@@ -8,3 +8,7 @@
   box-sizing: border-box;
   font-family: "Manrope", sans-serif;
 }
+
+.active {
+  @apply text-white bg-white bg-opacity-5 p-3 rounded-lg;
+}
