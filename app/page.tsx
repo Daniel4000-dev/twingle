@@ -7,13 +7,13 @@ import TopCards from '@/components/TopCards.tsx';
 
 export default function Home() {
   return (
-    <div className="bg-gray-100 h-screen w-full">
-      <Header />
+    <div className="">
+      {/* <Header />
       <TopCards />
       <div className='mx-8 grid md:grid-cols-3 grid-cols-1 gap-3 mb-4'>
         <AdminChart />
         <Complaints />
-      </div>
+      </div> */}
     </div>
   );
 }

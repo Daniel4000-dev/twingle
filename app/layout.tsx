@@ -1,7 +1,8 @@
-import "@/styles/global.css";
+import "@/styles/globals.css";
 import { Inter } from "next/font/google";
 import { cn } from "@/lib/utils";
 import Sidebar from "@/components/sidebar";
+import PageWrapper from "@/components/pagewrapper";
 import Header from "@/components/header";
 
 const inter = Inter({ 
@@ -22,11 +23,12 @@ export default function RootLayout({
 {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={inter.className + 'min-h-screen overflow-hidden'}>
         <>
           <Sidebar />
-          <div>
+          <div className='flex flex-col min-h-screen w-full'>
             <Header />
+            <PageWrapper children={children} />
           </div>
         </>
       </body>
