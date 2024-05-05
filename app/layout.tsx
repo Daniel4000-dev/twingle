@@ -1,32 +1,34 @@
-"use client"
-import Sidebar from "@/components/Sidebar.tsx";
+import "@/styles/global.css";
 import { Inter } from "next/font/google";
-import { metadata } from './metadata.ts';
-import { usePathname } from "next/navigation.js";
-import "./globals.css";
+import { cn } from "@/lib/utils";
+import Sidebar from "@/components/sidebar";
+import Header from "@/components/header";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ 
+  subsets: ["latin"] ,
+  variable: "--font-inter",
+});
+
+export const metadata: Metadata = {
+  title: "Twingle",
+  description: "Twingle Dashboard"
+}
 
 export default function RootLayout({
-  children,
-  props
+  children
 }: Readonly<{
   children: React.ReactNode;
-  props: React.ReactNode;
 }>)
 {
-
-  const currentRoute = usePathname()
   return (
     <html lang="en">
-      <head>
-        <title>{metadata.title}</title>
-        <meta name="description" content={metadata.description} />
-      </head>
       <body className={inter.className}>
-        <div className=''>
-          <Sidebar currentRoute={currentRoute}>{children}</Sidebar>
-        </div>
+        <>
+          <Sidebar />
+          <div>
+            <Header />
+          </div>
+        </>
       </body>
     </html>
   );
