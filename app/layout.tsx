@@ -29,7 +29,7 @@ export default function RootLayout({
         )}>
         <>
           <Sidebar />
-          <div className='flex flex-col min-h-screen w-full pl-[12.6rem] sm:pl-[20rem]'>
+          <div className='flex flex-col min-h-screen w-full'>
             <Header />
             <PageWrapper children={children} />
           </div>

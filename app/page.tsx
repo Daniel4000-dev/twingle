@@ -1,3 +1,4 @@
+import Activity from "@/components/summaryhead.jsx";
 import {
   Card,
   CardContent,
@@ -7,28 +8,36 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 import { SUMMARYHEAD_ITEMS } from "@/constants/summary/summaryhead";
+import { Overview } from "./components/overview.tsx";
+import { RecentSales } from "./components/recent-sales";
 
 
 export default function Home() {
   return (
    <>
-    <div className='flex-1 space-y-4 p-8'>
+    <div className='bg-gray-100 flex-1 space-y-4 p-8'>
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-      {SUMMARYHEAD_ITEMS.map((item, index) => {
-        return (
-        <Card key={index}>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">{item.title}</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="text-2xl font-bold">{item.body}</div>
-            <p className="text-xs ">{item.note}</p>
-          </CardContent>
-        </Card>
-     
-        )
-      })}
+        <Activity />
        </div>
+
+       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-7">
+                <Card className="col-span-4">
+                  <CardHeader>
+                    <CardTitle>Subscriptions/Active users</CardTitle>
+                  </CardHeader>
+                  <CardContent className="pl-2 overflow-x">
+                    <Overview />
+                  </CardContent>
+                </Card>
+                <Card className="col-span-3">
+                  <CardHeader>
+                    <CardTitle>Summary of complaints</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    {/* <RecentSales   /> */}
+                  </CardContent>
+                </Card>
+        </div>
     </div>
    </>
   );

@@ -3,8 +3,8 @@ import AdminChart from "@/components/AdminChart.tsx";
 
 export default function Header() {
   return (
-    <header className=' bg-gray-100'>
-          <div className="flex justify-between items-center px-8 pt-5 mb-7">
+    <header className=' bg-gray-100 pl-[12.6rem] sm:pl-[20rem]'>
+          <div className="flex justify-between items-center px-8 pt-6">
             <div>
               <h2 className="text-lg sm:text-3xl font-bold">Summary</h2>
             </div>
