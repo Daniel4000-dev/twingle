@@ -1,4 +1,4 @@
-import Activity from "@/components/summaryhead.jsx";
+import Activity from "@/components/summaryhead";
 import {
   Card,
   CardContent,
