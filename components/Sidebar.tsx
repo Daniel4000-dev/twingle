@@ -12,6 +12,8 @@ import Subscriptions from './Subscriptions.tsx';
 import Settings from './Settings.tsx';
 import Advertisement from './Advertisement.tsx';
 import { GoPerson } from 'react-icons/go';
+import { SIDENAV_ITEMS } from '@/constants/sidebar_constants';
+import SideBarMenuItems from './sidebarmenuitems';
 
 const Sidebar = () => {
   return (
@@ -21,6 +23,15 @@ const Sidebar = () => {
                 <h2 className="text-xl">Twingle</h2>
                 <h2 className="text-sm font-thin text-gray-300">Tier 1</h2>
             </div>
+            <nav className='mt-4'>
+                <div>
+                    {SIDENAV_ITEMS.map((item, index) => {
+                        return (
+                            <SideBarMenuItems key={index} menuItem={item} />
+                        )
+                    })}
+                </div>
+            </nav>
             {/* <div className='flex gap-4 flex-col mt-5'>
                <Link href='/' className ={currentRoute === '/' ? 'active' : 'text-gray-400 p-3'}>
                 <div className='flex gap-2 '>

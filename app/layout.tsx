@@ -1,13 +1,13 @@
 import "@/styles/globals.css";
-import { Inter } from "next/font/google";
+import { Inter as FontSans } from "next/font/google";
 import { cn } from "@/lib/utils";
 import Sidebar from "@/components/sidebar";
 import PageWrapper from "@/components/pagewrapper";
 import Header from "@/components/header";
 
-const inter = Inter({ 
-  subsets: ["latin"] ,
-  variable: "--font-inter",
+const fontSans = FontSans({
+  subsets: ["latin"],
+  variable: "--font-sans",
 });
 
 export const metadata: Metadata = {
@@ -23,10 +23,13 @@ export default function RootLayout({
 {
   return (
     <html lang="en">
-      <body className={inter.className + 'min-h-screen overflow-hidden'}>
+      <body className={cn(
+         'min-h-screen overflow-hidden',
+         fontSans.variable
+        )}>
         <>
           <Sidebar />
-          <div className='flex flex-col min-h-screen w-full'>
+          <div className='flex flex-col min-h-screen w-full pl-[12.6rem] sm:pl-[20rem]'>
             <Header />
             <PageWrapper children={children} />
           </div>
