@@ -1,11 +1,11 @@
 import { SUMMARYHEAD_ITEMS } from '@/constants/summary/summaryhead.jsx'
 import { SummaryHeadItem } from '@/types/types.jsx'
 import React from 'react'
-import { Card, CardContent, CardHeader, CardTitle } from './ui/card.jsx'
+import { Card, CardContent, CardHeader, CardTitle } from './ui/card'
 
 const Activity = () => {
 
-    export const SUMMARYHEAD_ITEMS: SummaryHeadItem[] = [
+    const SUMMARYHEAD_ITEMS: SummaryHeadItem[] = [
         {
             title: "Revenue",
             body: "128,939,938",
@@ -28,7 +28,7 @@ const Activity = () => {
         },
     ]
   return (
-    <div>
+    <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
         {SUMMARYHEAD_ITEMS.map((item, index) => {
         return (
         <Card key={index}>

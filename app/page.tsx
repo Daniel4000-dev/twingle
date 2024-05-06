@@ -8,15 +8,15 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 import { SUMMARYHEAD_ITEMS } from "@/constants/summary/summaryhead";
-import { Overview } from "./components/overview.tsx";
-import { RecentSales } from "./components/recent-sales";
+import Complaints from "./components/Complaints";
+import { Overview } from "./components/overview";
 
 
 export default function Home() {
   return (
    <>
     <div className='bg-gray-100 flex-1 space-y-4 p-8'>
-      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+      <div>
         <Activity />
        </div>
 
@@ -34,7 +34,7 @@ export default function Home() {
                     <CardTitle>Summary of complaints</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    {/* <RecentSales   /> */}
+                    <Complaints />
                   </CardContent>
                 </Card>
         </div>

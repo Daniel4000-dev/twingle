@@ -9,3 +9,10 @@ export type SummaryHeadItem = {
     body: string;
     note: string;
 }
+
+export type ComplaintItem = {
+    description: string;
+    icon?: JSX.Element;
+    amount: string;
+    time: string;
+}
