@@ -17,8 +17,8 @@ export const SUMMARYHEAD_ITEMS: SummaryHeadItem[] = [
         note: " 4% from last month",
     },
     {
-        title: "Revenue",
-        body: "128,939,938",
-        note: "↑ 8% from last month",
+        title: "Matches",
+        body: "12,700",
+        note: "↑ same as last month",
     },
 ]
