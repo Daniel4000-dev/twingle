@@ -1,7 +1,6 @@
 'use client'
 import React, { ReactNode } from 'react';
 import classNames from 'classnames';
-import { useSideBarToggle } from '@/hooks/use-sidebar-toggle';
 
 const PageWrapper = ({ children }: { children: ReactNode }) => {
 

@@ -27,7 +27,7 @@ export default function Home() {
                     <CardTitle>Subscriptions/Active users</CardTitle>
                   </CardHeader>
                   <CardContent className="pl-2 overflow-x">
-                    {/* <Overview /> */}
+                    <Overview />
                   </CardContent>
                 </Card>
                 <Card className="col-span-3 xl:col-span-2">

@@ -94,7 +94,7 @@ const data = [
 
 export function Overview() {
   return (
-    <ResponsiveContainer width="100%" height="100%">
+    <ResponsiveContainer width="100%" height={350}>
       <BarChart
         width={20}
         height={300}

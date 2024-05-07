@@ -1,8 +1,11 @@
+import { AdminManagementTable } from '@/components/adminmanagementable'
 import React from 'react'
 
 const AdminManagement = () => {
   return (
-    <div>AdminManagement</div>
+    <div>
+      <AdminManagementTable />
+    </div>
   )
 }
 
