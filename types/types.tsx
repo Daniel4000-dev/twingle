@@ -16,3 +16,11 @@ export type ComplaintItem = {
     amount: string;
     time: string;
 }
+
+export type DisputeItem = {
+    name: string;
+    mail: string;
+    body: string;
+    date: string;
+    time: string;
+}

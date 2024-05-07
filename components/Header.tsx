@@ -1,10 +1,8 @@
-// import Image from "next/image";
-import AdminChart from "@/components/AdminChart.tsx";
 
 export default function Header() {
   return (
-    <header className=' bg-gray-100 pl-[12.6rem] sm:pl-[20rem]'>
-          <div className="flex justify-between items-center px-8 pt-6">
+    <header className='fixed top-0 w-full z-20 bg-gray-100 pb-8 pl-[12.6rem] sm:pl-[20rem]'>
+          <div className="flex justify-between items-center px-8 pt-5">
             <div>
               <h2 className="text-lg sm:text-3xl font-bold">Summary</h2>
             </div>

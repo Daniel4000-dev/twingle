@@ -24,12 +24,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={cn(
-         'min-h-screen overflow-hidden',
+         'min-h-screen overflowhidden',
          fontSans.variable
         )}>
         <>
           <Sidebar />
-          <div className='flex flex-col min-h-screen w-full'>
+          <div className='flex flex-col min-h-screen w-full pt-12'>
             <Header />
             <PageWrapper children={children} />
           </div>
