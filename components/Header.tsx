@@ -1,15 +1,24 @@
+'use client';
+
+import { SIDENAV_ITEMS } from "@/constants/SIDENAV_ITEMS";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
+  const currentRoute = usePathname();
   return (
     <header className='fixed top-0 w-full z-20 bg-gray-100 pb-8 pl-[12.6rem] sm:pl-[20rem]'>
           <div className="flex justify-between items-center mx-8 pt-5">
-            <div>
-              <h2 className="text-lg sm:text-3xl font-bold">Summary</h2>
-            </div>
-            <div className="flex justi">
-             <h2>jeddy Teep</h2>
-            </div>
-          </div>
+          <div>
+          {SIDENAV_ITEMS.map((item, index) => {
+        return (
+          <h2 key={index} className="text-lg sm:text-3xl font-bold">{currentRoute === item.path && <div>{item.title}</div> }</h2>
+          )
+        })}
+        </div>
+        <div className="flex justi">
+         <h2>jeddy Teep</h2>
+        </div>
+    </div>
     </header>
   );
 }
