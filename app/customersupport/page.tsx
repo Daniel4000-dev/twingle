@@ -7,33 +7,38 @@ async function getData(): Promise<Payment[]> {
   return [
     {
       id: "m5gr84i9",
-      amount: 316,
-      status: "success",
-      email: "ken99@yahoo.com",
+      user: { name: 'Chiamaka', email: 'chiamaka@gmail.com' },
+      complaint: "I subscribed to the mobile app that",
+      status: "Pending",
+      date: '29/01/2020'
     },
     {
-      id: "3u1reuv4",
-      amount: 242,
-      status: "success",
-      email: "Abe45@gmail.com",
+      id: "m5e4i4i9",
+      user: { name: 'Big Baby', email: 'bigbaby@gmail.com' },
+      complaint: "I subscribed to the mobile app that",
+      status: "Open",
+      date: '29/01/2020'
     },
     {
-      id: "derv1ws0",
-      amount: 837,
-      status: "processing",
-      email: "Monserrat44@gmail.com",
+      id: "m5vdk4i9",
+      user: { name: 'Chioma', email: 'chioma@gmail.com' },
+      complaint: "I subscribed to the mobile app that",
+      status: "Closed",
+      date: '29/01/2020'
     },
     {
-      id: "5kma53ae",
-      amount: 874,
-      status: "success",
-      email: "Silas22@gmail.com",
+      id: "m5gsu8i9",
+      user: { name: 'Su', email: 'su@gmail.com' },
+      complaint: "I subscribed to the mobile app that",
+      status: "Closed",
+      date: '29/01/2020'
     },
     {
-      id: "bhqecj4p",
-      amount: 721,
-      status: "failed",
-      email: "carmella@hotmail.com",
+      id: "m5geo9i9",
+      user: { name: 'Tenny', email: 'chiamaka@gmail.com' },
+      complaint: "I subscribed to the mobile app that",
+      status: "Open",
+      date: '29/01/2020'
     },
   ]
 }
