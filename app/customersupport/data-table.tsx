@@ -22,7 +22,7 @@ interface CustomerSupportTableProps<TData, TValue> {
 }
 
 
-const customCellUserRenderer = (cell) => {
+const customCellRenderer = (cell) => {
   const user = cell.getValue('user');
   const userName = user?.name;
   const userEmail = user?.email;
@@ -39,8 +39,7 @@ const customCellUserRenderer = (cell) => {
   }else if((cell.column.id) === "status") {
     return 
   }
-  return customCell;
-}
+};
 
 export function DataTable<TData, TValue>({
     columns,
@@ -82,11 +81,7 @@ export function DataTable<TData, TValue>({
                 >
                   {row.getVisibleCells().map((cell) => (
                     <TableCell key={cell.id}>
-                      {cell.column.id === "user" ? (
-                        customCellUserRenderer(cell)
-                      ) : (
-                        flexRender(cell.column.columnDef.cell, cell.getContext())
-                      )}
+                      {customCellRenderer(cell)}
                     </TableCell>
                   ))}
                 </TableRow>
