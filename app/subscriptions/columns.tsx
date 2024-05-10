@@ -10,7 +10,7 @@ export type Payment = {
     revenue_quarter: string
     start_date: string
     expiry_date: string
-    status: "Paid" | "Expired" | "Cancelled"
+    status: "Paid" | "Expired" | "Canceled"
   }
 
   export type Pay = {

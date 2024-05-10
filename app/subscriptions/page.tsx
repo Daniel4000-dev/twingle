@@ -33,7 +33,7 @@ async function getData(): Promise<Payment[]> {
       revenue_quarter: '₦14,000',
       start_date: '29/01/2020',
       expiry_date: '29/02/2020',
-      status: 'Cancelled',
+      status: 'Canceled',
     },
     {
       id: "m5pdk8i9",
@@ -43,7 +43,7 @@ async function getData(): Promise<Payment[]> {
       revenue_quarter: '₦14,000',
       start_date: '29/01/2020',
       expiry_date: '29/02/2020',
-      status: 'Cancelled',
+      status: 'Canceled',
     },
      {
       id: "m5vdd8i9",
@@ -53,7 +53,7 @@ async function getData(): Promise<Payment[]> {
       revenue_quarter: '₦14,000',
       start_date: '29/01/2020',
       expiry_date: '29/02/2020',
-      status: 'Cancelled',
+      status: 'Canceled',
     },
     {
       id: "m5edk8i9",
@@ -131,7 +131,7 @@ async function getData(): Promise<Payment[]> {
 export default async function Subscriptions() {
   const data = await getData()
   return (
-    <div className='h-[85vh] overflow-scroll overflow-y mt-8 mx-8 bg-white rounded-lg'>
+    <div className=' mt-8 mx-8 bg-white rounded-lg'>
       <div className='m-4 py-10'>
       <DataTable columns={columns} data={data} />
       </div>

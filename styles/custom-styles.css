@@ -1,0 +1,4 @@
+.appearance-none.border.no-focus-ring:focus {
+    outline: none;
+    box-shadow: none; /* Subtle outline effect */
+  }
