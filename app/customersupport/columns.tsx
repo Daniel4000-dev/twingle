@@ -36,7 +36,4 @@ export type Payment = {
       accessorKey: "date",
       header: "Date",
     },
-  ].map((column) => {
-    console.log("Column ID:", column.id); // Log the ID of each column
-    return column;
-  });
+  ]

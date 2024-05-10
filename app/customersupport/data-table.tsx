@@ -24,8 +24,26 @@ interface CustomerSupportTableProps<TData, TValue> {
 
 const customCellRenderer = (cell) => {
   const user = cell.getValue('user');
+  const complaint = cell.getValue('complaint');
+  const status = cell.getValue('status');
+  const date = cell.getValue('date');
+
+
   const userName = user?.name;
   const userEmail = user?.email;
+
+  const getStatusColor = (status) => {
+    switch (status) {
+      case "Open":
+        return "bg-purple-200 text-purple-400";
+      case "Closed":
+        return "bg-gray-100 text-gray-300";
+      case "Pending":
+       return "bg-orange-200 text-orange-400";
+      default:
+        return "bg-white";
+    }
+  }
 
   if((cell.column.id) === "user") {
     return (
@@ -33,11 +51,20 @@ const customCellRenderer = (cell) => {
         <div>{userName}</div>
         <div className='text-xs text-gray-200'>{userEmail}</div>
       </div>
-    )
+    );
   } else if((cell.column.id) === "complaint") {
-    return;
-  }else if((cell.column.id) === "status") {
-    return 
+    return (
+      <div className=" overflow-hidden text-overflow-ellipsis">
+      <h2 className='text-sm line-clamp-1'>{complaint}</h2>
+      </div>
+    );
+  }else if((cell.column.id) === "status")  {
+    const statusColor = getStatusColor(status);
+    return (
+      <div className={`${statusColor} flex justify-center w-[58px] sm:-ml-4 mx-auto rounded-sm`}>{status}</div>
+    )
+  } else {
+    return date;
   }
 };
 
@@ -52,7 +79,7 @@ export function DataTable<TData, TValue>({
     })
 
     return (
-      <div className="rounded-md border">
+      <div className="rounded-md border-none">
         <Table>
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
