@@ -16,7 +16,7 @@ import { SIDENAV_ITEMS } from "@/constants/SIDENAV_ITEMS";
 export default function Sidebar() {
   return (
     <div className="fixed flex z-50 top-0">
-      <div className="fixed w-[12.6rem] sm:w-[20rem] h-screen p-5 pt-8 text-white bg-black border-r-[1px] flex flex-col">
+      <div className="fixed w-[12.6rem] sm:w-[16rem] h-screen p-5 pt-8 text-white bg-black border-r-[1px] flex flex-col">
         <div className="flex justify-between mb-7">
           <h2 className="text-xl">Twingle</h2>
           <h2 className="text-sm font-thin text-gray-300">Tier 1</h2>

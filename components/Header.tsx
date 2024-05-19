@@ -6,8 +6,8 @@ import { usePathname } from "next/navigation";
 export default function Header() {
   const currentRoute = usePathname();
   return (
-    <header className='fixed top-0 w-full z-20 bg-gray-100 pb-8 pl-[12.6rem] sm:pl-[20rem]'>
-          <div className="flex justify-between items-center mx-8 pt-5">
+    <header className='fixed top-0 w-full z-20 bg-gray-100 pb-12 pl-[12.6rem] sm:pl-[16rem]'>
+          <div className="flex justify-between items-center mx-8 pb-2 pt-5 ">
           <div>
           {SIDENAV_ITEMS.map((item, index) => {
         return (

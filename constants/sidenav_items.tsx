@@ -9,41 +9,41 @@ export const SIDENAV_ITEMS: SideNavItem[] = [
     {
       title: "Summary",
       path: "/",
-      icon: <RxDashboard size={27} />,
+      icon: <RxDashboard size={20} />,
     },
     {
       title: "Admin Management",
       path: "/adminmanagement",
-      icon: <GoPerson size={27} />,
+      icon: <GoPerson size={20} />,
     },
     {
       title: "Customers",
       path: "/customers",
-      icon: <PiUsersThree size={27} />,
+      icon: <PiUsersThree size={20} />,
     },
     {
       title: "Customer Support",
       path: "/customersupport",
-      icon: <IoChatbubblesOutline size={27} />,
+      icon: <IoChatbubblesOutline size={20} />,
     },
     {
       title: "Reports and complaints",
       path: "/reportsandcomplaints",
-      icon: <CiWarning size={27} />,
+      icon: <CiWarning size={20} />,
     },
     {
       title: "Subscriptions",
       path: "/subscriptions",
-      icon: <CiCreditCard1 size={27} />,
+      icon: <CiCreditCard1 size={20} />,
     },
     {
       title: "Settings",
       path: "/settings",
-      icon: <IoSettingsOutline size={27} />,
+      icon: <IoSettingsOutline size={20} />,
     },
     {
       title: "Advertisement",
       path: "/advertisement",
-      icon: <PiBookOpenTextThin size={27} />,
+      icon: <PiBookOpenTextThin size={20} />,
     },
   ];

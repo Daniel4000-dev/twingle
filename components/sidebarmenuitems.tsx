@@ -14,7 +14,7 @@ const SideBarMenuItems = ({menuItem} : {menuItem: SideNavItem}) => {
             <Link  href={menuItem.path} className ={`${currentRoute === menuItem.path ? activeLink : inactiveLink}`}>
                 <div className='flex items-center gap-2 p-2'>
                     {menuItem.icon}
-                    <h2 className='text-xl font-sans'>{menuItem.title}</h2>
+                    <h2 className='text-sm font-sans'>{menuItem.title}</h2>
                 </div>
             </Link>
         </div>

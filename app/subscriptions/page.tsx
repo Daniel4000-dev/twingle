@@ -7,7 +7,7 @@ async function getData(): Promise<Payment[]> {
   return [
     {
       id: "m5vuk4i9",
-      user: { name: 'Mma', email: 'mma@gmail.com' },
+      user: { name: 'Ayodmide', email: 'ayomide@gmail.com' },
       type_of_subscription: "Premium",
       billing_type: "Service provider",
       revenue_quarter: '₦14,000',

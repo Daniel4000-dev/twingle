@@ -118,7 +118,7 @@ export function DataTable<TData, TValue>({
       initialState: {
         pagination: {
             "pageIndex": 0,
-            "pageSize": 7,
+            "pageSize": 6,
         }
       },
     })
@@ -127,7 +127,7 @@ export function DataTable<TData, TValue>({
       <div className="rounded-md border-none">
          <div className="flex items-center py-4">
         <Input
-          className='ring-0 appearance-none no-focus- focus-visible:ring1-0 bg-red-700'
+          className=''
           placeholder="Filter emails..."
           value={(table.getColumn("email")?.getFilterValue() as string) ?? ""}
           onChange={(event) =>
