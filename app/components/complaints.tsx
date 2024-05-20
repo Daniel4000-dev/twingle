@@ -1,39 +1,9 @@
+import { COMPLAINT_ITEMS } from '@/constants/complainitems';
 import { ComplaintItem } from '@/types/types';
 import React from 'react';
 
 const Complaints = () => {
-    const COMPLAINT_ITEMS: ComplaintItem[] = [
-        {
-            description: 'Inappropriate language',
-            amount: '553 reports',
-            time: 'in the past month'
-        },
-        {
-            description: 'Fake profile',
-            amount: '1249 reports',
-            time: 'in the past month'
-        },
-        {
-            description: 'Suspicious information',
-            amount: '1357 reports',
-            time: 'in the past month'
-        },
-        {
-            description: 'Underage',
-            amount: '760 reports',
-            time: 'in the past month'
-        },
-        {
-            description: 'Wrong address',
-            amount: '345 reports',
-            time: 'in the past month'
-        },
-        {
-            description: 'False information',
-            amount: '853 reports',
-            time: 'in the past month'
-        }
-    ]
+   
   return (
     <div className=" ">
             <div className="w-full h-[22rem] col-span-1 relative  m-auto px4 pt4 bg-white rounded-lg overflow-scroll">
