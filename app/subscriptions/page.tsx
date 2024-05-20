@@ -131,7 +131,7 @@ async function getData(): Promise<Payment[]> {
 export default async function Subscriptions() {
   const data = await getData()
   return (
-    <div className=' mt-8 mx-8 bg-white rounded-lg'>
+    <div className='mt-8 mx-8 bg-white rounded-lg'>
       <div className='m-4 py-10'>
       <DataTable columns={columns} data={data} />
       </div>

@@ -4,6 +4,7 @@ import {
     ColumnDef,
     flexRender,
     getCoreRowModel,
+    getPaginationRowModel,
     useReactTable,
 } from "@tanstack/react-table";
 
@@ -16,6 +17,7 @@ import {
     TableRow,
 } from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
+import Complaints from "../components/Complaints";
 
 interface ReportsAndComplaintsTableProps<TData, TValue> {
     columns: ColumnDef<TValue, TValue>[]
@@ -95,6 +97,7 @@ export function DataTable<TData, TValue>({
       data,
       columns,
       getCoreRowModel: getCoreRowModel(),
+      getPaginationRowModel: getPaginationRowModel(),
       initialState: {
         pagination: {
             "pageIndex": 0,
@@ -105,6 +108,22 @@ export function DataTable<TData, TValue>({
    
     return (
       <div className="rounded-md border-none">
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+        {COMPLAINT_ITEMS.map((item, index) => {
+        return (
+        <Card key={index}>
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle className="text-sm font-medium">{item.title}</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="text-2xl font-bold">{item.body}</div>
+            <p className="text-xs ">{item.note}</p>
+          </CardContent>
+        </Card>
+     
+        )
+      })}
+    </div>
         <Table>
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
