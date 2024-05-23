@@ -18,6 +18,13 @@ import {
 } from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
 import Complaints from "../components/Complaints";
+import { COMPLAINT_ITEMS } from "@/constants/complainitems";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { useState } from "react";
+import { IoIosArrowDown } from "react-icons/io";
+import { Input } from "@/components/ui/input";
+import { ArrowUpDown, ChevronDown, MoreHorizontal } from "lucide-react"
+import { DropdownMenu, DropdownMenuCheckboxItem, DropdownMenuContent, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 
 interface ReportsAndComplaintsTableProps<TData, TValue> {
     columns: ColumnDef<TValue, TValue>[]
@@ -105,25 +112,88 @@ export function DataTable<TData, TValue>({
         }
       },
     })
+
+    const [complaintMenuOpen, setComplaintMenuOpen] = useState(false);
+
+    const toggleComplaintMenu = () => {
+      setComplaintMenuOpen(!complaintMenuOpen);
+    }
    
     return (
       <div className="rounded-md border-none">
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-        {COMPLAINT_ITEMS.map((item, index) => {
-        return (
-        <Card key={index}>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">{item.title}</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="text-2xl font-bold">{item.body}</div>
-            <p className="text-xs ">{item.note}</p>
-          </CardContent>
-        </Card>
-     
-        )
-      })}
-    </div>
+        <div className='flex items-center justify-between'>
+          <div className="flex gap-4">
+          <Input
+          placeholder="Filter emails..."
+          value={table.getState().globalFilter || ""}
+          onChange={(event) =>
+            table.setGlobalFilter(event.target.value)
+          }
+          className="max-w-sm focus:outline-none"
+        />
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button variant="outline" className="">
+              Columns <ChevronDown className="ml-2 h-4 w-4" />
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="end">
+            {table
+              .getAllColumns()
+              .filter((column) => column.getCanHide())
+              .map((column) => {
+                return (
+                  <DropdownMenuCheckboxItem
+                    key={column.id}
+                    className="capitalize"
+                    checked={column.getIsVisible()}
+                    onCheckedChange={(value) =>
+                      column.toggleVisibility(!!value)
+                    }
+                  >
+                    {column.id}
+                  </DropdownMenuCheckboxItem>
+                )
+              })}
+          </DropdownMenuContent>
+        </DropdownMenu>
+          </div>
+          <div className='flex gap-4 items-center'>
+            <div className='bg-gray-100 rounded-md text-xs p-3'>
+              <h2>Cause of Report: <span>Suspicious information</span></h2>
+            </div>
+            <div className='bg-gray-100 rounded-md text-xs p-3'>
+              <h2>Reporter's Gender: <span>Women</span></h2>
+            </div>
+            <div className='bg-gray-100 rounded-md text-xs p-3'>
+              <h2>Status: <span>All</span></h2>
+            </div>
+          </div>
+        </div>
+        <div className='flex gap-4 items-center mb-3'>
+          <h2 className='text-lg '>Summary of complaints</h2>
+          <h2 className='' onClick={toggleComplaintMenu}><IoIosArrowDown className={`${
+                    complaintMenuOpen ? "rotate-180" : ""
+                  } ml-auto stroke-2 text-lg`} /></h2>
+        </div>
+        {complaintMenuOpen && (<div className="flex flex-row gap-2 overflow-x-auto">
+                    {COMPLAINT_ITEMS.map((item, index) => (
+                        <Card key={index} className={`flex flex-row gap-2 mb-${index === (COMPLAINT_ITEMS.length - 1) ? '4' : '4'} items-center`}>
+                        <div className="w-[20vw] sm:w-[22vw] lg:w-[18vw]  rounded-lg shadow-sm shadow-purple-200 text-xs">
+                            <h2 className="bg-purple-200 rounded-t-lg pl-6 p-1">
+                                {item.description}
+                            </h2>
+                            <div className="flex justify-around items-center mx-2 pt-1 pb-1">
+                            <h2>
+                                {item.amount}
+                            </h2>
+                            <p>--</p>
+                            <h2 className="text-sm">{item.time}</h2>
+                            </div>
+                        </div>
+                    </Card>
+                    ))}
+    </div>) }
         <Table>
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (

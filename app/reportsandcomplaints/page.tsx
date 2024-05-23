@@ -1,3 +1,4 @@
+'use client';
 import { Payment, columns } from "./columns";
 import { DataTable } from "./data-table";
 import React from 'react'
@@ -89,6 +90,7 @@ async function getData(): Promise<Payment[]> {
 }
 
 export default async function ReportsAndComplaints() {
+
   const data = await getData()
   return (
     <div className='mt-8 mx-8 bg-white rounded-lg'>
