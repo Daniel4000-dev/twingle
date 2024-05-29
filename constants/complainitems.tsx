@@ -3,12 +3,11 @@ import vector from '../public/Vector.png';
 import userRemove from '@/public/user-remove.png';
 import danger from '@/public/danger.png';
 import milk from '@/public/milk.png';
-import coin from '../public/coin.png';
 
 export const COMPLAINT_ITEMS: ComplaintItem[] = [
     {
         description: 'Inappropriate language',
-        icon: coin,
+        icon: vector,
         amount: '553 reports',
         time: 'in the past month'
     },
