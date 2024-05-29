@@ -13,7 +13,7 @@ export type SummaryHeadItem = {
 
 export type ComplaintItem = {
     description: string;
-    icon?: JSX.Element;
+    icon?: string;
     amount: string;
     time: string;
 }
