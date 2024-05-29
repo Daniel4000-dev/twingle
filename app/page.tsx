@@ -8,7 +8,7 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 import { SUMMARYHEAD_ITEMS } from "@/constants/summary/summaryhead";
-import Complaints from "./components/Complaints";
+import Complaints from "@/components/Complaints";
 import Disputes from "./components/disputes";
 import { Overview } from "./components/overview";
 
