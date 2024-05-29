@@ -6,6 +6,7 @@ export type SideNavItem = {
 
 export type SummaryHeadItem = {
     title: string;
+    icon?: string;
     body: string;
     note: string;
 }

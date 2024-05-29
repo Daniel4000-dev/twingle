@@ -26,25 +26,25 @@ export function DialogDemo() {
             <Label htmlFor="name" className="text-right text-xs">
              First Name
             </Label>
-            <Input id="name" value="First Name" className="col-span-3" />
+            <Input id="name" placeholder="First Name" className="col-span-3 placeholder:text-gray-300" />
           </div>
           <div className="space-y-1">
             <Label htmlFor="lastname" className="text-right text-xs">
               Last Name
             </Label>
-            <Input id="lastname" value="Last Name" className="col-span-3" />
+            <Input id="lastname" placeholder="Last Name" className="col-span-3 placeholder:text-gray-300" />
           </div>
           <div className="space-y-1">
             <Label htmlFor="phonenumber" className="text-right text-xs">
               Phone Number
             </Label>
-            <Input id="phonenumber" value="+234" className="col-span-3" />
+            <Input id="phonenumber" placeholder="+234" className="col-span-3 placeholder:text-gray-300" />
           </div>
           <div className="space-y-1">
             <Label htmlFor="personalemail" className="text-right text-xs">
               Personal Email
             </Label>
-            <Input id="personalemail" value="email@example.com" className="col-span-3" />
+            <Input id="personalemail" placeholder="email@example.com" className="col-span-3 placeholder:text-gray-300" />
           </div>
           <div className="space-y-1">
             <Label htmlFor="role" className="text-right text-xs">
