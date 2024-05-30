@@ -13,7 +13,7 @@ import SideBarMenuItems from "./sidebarmenuitems";
 import { SIDENAV_ITEMS } from "@/constants/SIDENAV_ITEMS";
 
 
-export default function Sidebar() {
+const Sidebar = () => {
   return (
     <div className="fixed flex z-50 top-0">
       <div className="fixed w-[12.6rem] sm:w-[16rem] h-screen p-5 pt-8 text-white bg-black border-r-[1px] flex flex-col">
@@ -32,3 +32,5 @@ export default function Sidebar() {
     </div>
   );
 };
+
+export default Sidebar
