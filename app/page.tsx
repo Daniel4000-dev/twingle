@@ -7,9 +7,9 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
-import Complaints from "./components/complaints";
-import Disputes from "./components/disputes";
-import { Overview } from "./components/overview";
+import Complaints from "../components/homerender/complaints";
+import Disputes from "../components/homerender/disputes";
+import { Overview } from "../components/homerender/overview";
 
 
 export default function Home() {
