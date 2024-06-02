@@ -1,6 +1,6 @@
 'use client';
 
-import { SIDENAV_ITEMS } from "@/constants/SIDENAV_ITEMS";
+import { SIDENAV_ITEMS } from "@/constants/sidenav_items";
 import { usePathname } from "next/navigation";
 
 export default function Header() {

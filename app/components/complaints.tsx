@@ -18,7 +18,9 @@ const Complaints = () => {
               <div className="w-full rounded-lg shadow-sm shadow-purple-200">
                 <div className="flex gap-1 rounded-t-lg pl-2 p-1 items-center bg-purple-200">
                   <div>
+                    {item.icon && (
                     <Image className="" src={item.icon} alt="" />
+                    )}
                   </div>
                   <div>
                     <h2 className=" text-sm">

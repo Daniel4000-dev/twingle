@@ -1,3 +1,5 @@
+import { StaticImageData } from "@/node_modules/next/image";
+
 export type SideNavItem = {
     title: string;
     path: string;
@@ -6,14 +8,14 @@ export type SideNavItem = {
 
 export type SummaryHeadItem = {
     title: string;
-    icon?: string;
+    icon?: StaticImageData;
     body: string;
     note: string;
 }
 
 export type ComplaintItem = {
     description: string;
-    icon?: string;
+    icon?: StaticImageData;
     amount: string;
     time: string;
 }

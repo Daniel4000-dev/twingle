@@ -1,4 +1,3 @@
-import { SUMMARYHEAD_ITEMS } from '@/constants/summary/summaryhead.jsx'
 import Image from '@/node_modules/next/image'
 import { SummaryHeadItem } from '@/types/types.jsx'
 import React from 'react'
@@ -47,7 +46,9 @@ const Activity = () => {
           </CardHeader>
           <CardContent>
             <div className='flex gap-3 ml-0'>
-            <Image className='-ml-12' src={item.icon} />
+              {item.icon && (
+            <Image className='-ml-12' src={item.icon} alt=''/>
+              )}
             <div className="text-2xl font-bold">{item.body}</div>
             </div>
             <p className={`text-xs textgreen-300 text-${index === (SUMMARYHEAD_ITEMS.length - 2) ? 'red-400' : 'green-300'} ${index === (SUMMARYHEAD_ITEMS.length) && "text-black"}`}>{item.note}</p>

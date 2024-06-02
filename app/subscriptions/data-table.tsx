@@ -26,6 +26,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import { Key } from "react";
 
 interface CustomerSupportTableProps<TData, TValue> {
     columns: ColumnDef<TValue, TValue>[]
@@ -33,7 +34,7 @@ interface CustomerSupportTableProps<TData, TValue> {
 }
 
 
-const customCellRenderer = (cell) => {
+const customCellRenderer = (cell: { getValue: (arg0: string) => any; column: { id: string; }; }) => {
   const user = cell.getValue('user');
   const type_of_subscription = cell.getValue('type_of_subscription');
   const billing_type = cell.getValue('billing_type');
@@ -46,7 +47,7 @@ const customCellRenderer = (cell) => {
   const userName = user?.name;
   const userEmail = user?.email;
 
-  const getStatusColor = (status) => {
+  const getStatusColor = (status: string) => {
     switch (status) {
       case "Paid":
         return "bg-purple-200 text-purple-400";
@@ -106,6 +107,11 @@ const customCellRenderer = (cell) => {
   }
 };
 
+interface DataTableProps<TData, TValue> {
+  columns: ColumnDef<TData, TValue>[]
+  data: TData[]
+}
+
 export function DataTable<TData, TValue>({
     columns,
     data,
@@ -133,7 +139,6 @@ export function DataTable<TData, TValue>({
           onChange={(event) =>
             table.getColumn("email")?.setFilterValue(event.target.value)
           }
-          className="max-w-sm"
         />
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
@@ -145,9 +150,9 @@ export function DataTable<TData, TValue>({
       </div>
         <Table>
           <TableHeader>
-            {table.getHeaderGroups().map((headerGroup) => (
+            {table.getHeaderGroups().map((headerGroup: { id: Key | null | undefined; headers: any[]; }) => (
               <TableRow key={headerGroup.id}>
-                {headerGroup.headers.map((header) => {
+                {headerGroup.headers.map((header: { id: Key | null | undefined; isPlaceholder: any; column: { columnDef: { header: any; }; }; getContext: () => any; }) => {
                   return (
                     <TableHead className='text-gray-200' key={header.id}>
                       {header.isPlaceholder
@@ -164,12 +169,12 @@ export function DataTable<TData, TValue>({
           </TableHeader>
           <TableBody>
             {table.getRowModel().rows?.length ? (
-              table.getRowModel().rows.map((row) => (
+              table.getRowModel().rows.map((row: { id: Key | null | undefined; getIsSelected: () => any; getVisibleCells: () => any[]; }) => (
                 <TableRow
                   key={row.id}
                   data-state={row.getIsSelected() && "selected"}
                 >
-                  {row.getVisibleCells().map((cell) => (
+                  {row.getVisibleCells().map((cell: { id: Key | null | undefined; getValue: (arg0: string) => any; column: { id: string } }) => (
                     <TableCell key={cell.id}>
                       {customCellRenderer(cell)}
                     </TableCell>

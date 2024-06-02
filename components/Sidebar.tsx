@@ -1,16 +1,7 @@
 "use client";
 import React from "react";
-import Image from "next/image";
-import Link from "next/link";
-import Customers from "./Customers";
-import AdminManagement from "./AdminManagement";
-import CustomerSupport from "./CustomerSupport";
-import ReportsAndComplaints from "./ReportsAndComplaints";
-import Subscriptions from "./Subscriptions";
-import Settings from "./Settings";
-import Advertisement from "./Advertisement";
 import SideBarMenuItems from "./sidebarmenuitems";
-import { SIDENAV_ITEMS } from "@/constants/SIDENAV_ITEMS";
+import { SIDENAV_ITEMS } from "@/constants/sidenav_items";
 
 
 const Sidebar = () => {

@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import Sidebar from "@/components/sidebar";
 import PageWrapper from "@/components/pagewrapper";
 import Header from "@/components/header";
+import { Metadata } from 'next';
 
 const fontSans = FontSans({
   subsets: ["latin"],

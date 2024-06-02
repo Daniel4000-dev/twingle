@@ -17,10 +17,9 @@ import {
     TableRow,
 } from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
-import Complaints from "../components/Complaints";
 import { COMPLAINT_ITEMS } from "@/constants/complainitems";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { useState } from "react";
+import { Key, useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import { Input } from "@/components/ui/input";
 import { ArrowUpDown, ChevronDown, MoreHorizontal } from "lucide-react"
@@ -31,7 +30,7 @@ interface ReportsAndComplaintsTableProps<TData, TValue> {
     data: TData[]
 }
 
-const customCellRenderer = (cell) => {
+const customCellRenderer = (cell: { getValue: (arg0: string) => any; column: { id: string; }; }) => {
   const user = cell.getValue('user');
   const type_of_subscription = cell.getValue('type_of_subscription');
   const reporter = cell.getValue('reporter');
@@ -47,7 +46,7 @@ const customCellRenderer = (cell) => {
   const reportedUserName = reported?.name
   const reportedUserEmail = reported?.email
 
-  const getStatusColor = (status) => {
+  const getStatusColor = (status: string) => {
     switch (status) {
       case "Open":
         return "bg-purple-200 text-purple-400";
@@ -96,6 +95,11 @@ const customCellRenderer = (cell) => {
   }
 };
 
+interface DataTableProps<TData, TValue> {
+  columns: ColumnDef<TData, TValue>[]
+  data: TData[]
+}
+
 export function DataTable<TData, TValue>({
     columns,
     data,
@@ -140,18 +144,18 @@ export function DataTable<TData, TValue>({
           <DropdownMenuContent align="end">
             {table
               .getAllColumns()
-              .filter((column) => column.getCanHide())
-              .map((column) => {
+              .filter((column: { getCanHide: () => any; }) => column.getCanHide())
+              .map((column: { id: Key | null | undefined; getIsVisible: () => any; toggleVisibility: (arg0: boolean) => any; }) => {
                 return (
                   <DropdownMenuCheckboxItem
                     key={column.id}
                     className="capitalize"
                     checked={column.getIsVisible()}
-                    onCheckedChange={(value) =>
+                    onCheckedChange={(value: any) =>
                       column.toggleVisibility(!!value)
                     }
                   >
-                    {column.id}
+                    {String(column.id)}
                   </DropdownMenuCheckboxItem>
                 )
               })}
@@ -196,9 +200,9 @@ export function DataTable<TData, TValue>({
     </div>) }
         <Table>
           <TableHeader>
-            {table.getHeaderGroups().map((headerGroup) => (
+            {table.getHeaderGroups().map((headerGroup: { id: Key | null | undefined; headers: any[]; }) => (
               <TableRow key={headerGroup.id}>
-                {headerGroup.headers.map((header) => {
+                {headerGroup.headers.map((header: { id: Key | null | undefined; isPlaceholder: any; column: { columnDef: { header: any; }; }; getContext: () => any; }) => {
                   return (
                     <TableHead key={header.id}>
                       {header.isPlaceholder
@@ -215,12 +219,12 @@ export function DataTable<TData, TValue>({
           </TableHeader>
           <TableBody>
             {table.getRowModel().rows?.length ? (
-              table.getRowModel().rows.map((row) => (
+              table.getRowModel().rows.map((row: { id: Key | null | undefined; getIsSelected: () => any; getVisibleCells: () => any[]; }) => (
                 <TableRow
                   key={row.id}
                   data-state={row.getIsSelected() && "selected"}
                 >
-                  {row.getVisibleCells().map((cell) => (
+                  {row.getVisibleCells().map((cell: { id: Key | null | undefined; getValue: (arg0: string) => any; column: { id: string } }) => (
                     <TableCell key={cell.id}>
                       {customCellRenderer(cell)}
                     </TableCell>
