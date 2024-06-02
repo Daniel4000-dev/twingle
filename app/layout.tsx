@@ -1,10 +1,10 @@
 import "@/styles/globals.css";
 import { Inter as FontSans } from "next/font/google";
 import { cn } from "@/lib/utils";
-import Sidebar from "@/components/sidebar";
 import PageWrapper from "@/components/pagewrapper";
-import Header from "@/components/header";
 import { Metadata } from 'next';
+import Header from "../components/header";
+import Sidebar from "../components/sidebar";
 
 const fontSans = FontSans({
   subsets: ["latin"],
