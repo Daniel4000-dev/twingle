@@ -3,13 +3,11 @@ import Activity from "@/components/summaryhead";
 import {
   Card,
   CardContent,
-  CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
-import Complaints from "../components/homerender/complaints";
-import Disputes from "../components/homerender/disputes";
+import Complaints from "@/components/homerender/complaints";
+import Disputes from "@/components/homerender/disputes";
 
 
 export default function Home() {
