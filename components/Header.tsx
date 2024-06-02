@@ -1,9 +1,9 @@
 'use client';
-
+import React from 'react';
 import { SIDENAV_ITEMS } from "@/constants/sidenav_items";
 import { usePathname } from "next/navigation";
 
-export function Header() {
+const Header = () => {
   const currentRoute = usePathname();
   return (
     <header className='fixed top-0 w-full z-20 bg-gray-100 pb-12 pl-[12.6rem] sm:pl-[16rem]'>
@@ -22,3 +22,5 @@ export function Header() {
     </header>
   );
 }
+
+export default Header
